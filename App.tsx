@@ -118,6 +118,9 @@ const styles = StyleSheet.create({
   },
   longcss1:{
     fontSize: 50
+  },
+  longcss2:{
+    fontSize: 50
   }
 });
 
