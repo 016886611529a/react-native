@@ -2,10 +2,41 @@
  * @format
  */
 import React from 'react';
-import { Text } from 'react-native';
 import {AppRegistry} from 'react-native';
-import MainScreen from './screens/MainScreen';
-
+import Welcome from './screens/Welcome';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => MainScreen);
+let fakedProducts = [
+    {
+        productName: 'iphong 10',
+        year: 2018,
+    },
+    {
+        productName: 'iphong 11',
+        year: 2020,
+    },
+    {
+        productName: 'iphong 12',
+        year: 2021,
+    },
+    {
+        productName: 'redmi note 8',
+        year: 2017,
+    }
+]
+    // AppRegistry.registerComponent(appName, () => 
+    //     () => <Welcome
+    //     x={1} 
+    //     y={2}
+    //     person={{
+    //         name: 'long',
+    //         age: 18,
+    //         email: 'long@gmail.com'
+    //             }}
+    //     products={fakedProducts}
+    //     />);
+
+      AppRegistry.registerComponent(appName, () => 
+        () => <Welcome
+        
+        />);
