@@ -72,7 +72,7 @@ function App(): JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
-        <View
+        <View 
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
@@ -80,7 +80,7 @@ function App(): JSX.Element {
             Edit <Text style={[styles.highlight, styles.longcss, styles.longcss1]}>App.tsx</Text> to change this
             screen and then come back to see your edits.
           </Section>
-          <Section title="See Your Changes">
+          <Section title="See Your Changes" >
             <ReloadInstructions />
           </Section>
           <Section title="Debug">
