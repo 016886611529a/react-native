@@ -1,12 +1,63 @@
 import React from 'react';
-import { Text,View,Image, Alert } from 'react-native';
+import { Text,View,Image, Alert,ImageBackground } from 'react-native';
 import {sum2Number,substract2Number,PI} from '../utilies/Calculation'
 function Welcome(props) {
     return (
-        <View>
-            <Text>This is welcome</Text>
-        </View>
-    )
+      <View style={{backgroundColor: 'white', flex: 100}}>
+        <ImageBackground
+          source={require('../Assets/background.jpg')}
+          resizeMode="cover"
+          style={{flex: 100}}>
+          <View
+            style={{
+              flex: 20,
+            }}>
+            <View
+              style={{
+                flexDirection: 'row',
+                height: 50,
+                justifyContent: 'flex-start',
+                alignItems: 'center',
+              }}>
+              <Image
+                source={require('../Assets/flame.png')}
+                style={{
+                  width: 30,
+                  height: 30,
+                  marginLeft: 10,
+                  marginRight: 5,
+                }}
+              />
+              <Text style={{color: 'white'}}>YOURCOMPANY.CO</Text>
+              <View style={{flex: 1}} />
+              <Image
+                source={require('../Assets/question-mark.png')}
+                style={{
+                  width: 20,
+                  height: 20,
+                  marginRight: 10,
+                  tintColor: 'white',
+                }}
+              />
+            </View>
+          </View>
+          <View
+            style={{
+              backgroundColor: 'green',
+              flex: 20,
+            }}></View>
+          <View
+            style={{
+              backgroundColor: 'yellow',
+              flex: 40,
+            }}></View>
+          <View
+            style={{
+              flex: 20,
+            }}></View>
+        </ImageBackground>
+      </View>
+    );
 }
 export default Welcome;
 
