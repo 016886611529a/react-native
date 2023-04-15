@@ -88,7 +88,7 @@ function Welcome(props) {
             flex: 40,
           }}>
           {accountTypes.map(accountType => (
-            <UIButton
+            <UIButton key={accountType.name}
               onPress={() => {
                 let newAccountType = accountTypes.map(eachAccountType => {
                   return {
