@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import {AppRegistry} from 'react-native';
-import Welcome from './screens/Welcome';
+import {Welcome,Login} from './screens';
 import {name as appName} from './app.json';
 
 let fakedProducts = [

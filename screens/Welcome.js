@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState,useRef} from 'react';
 import {
   Text,
   View,
@@ -8,9 +8,26 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {sum2Number, substract2Number, PI} from '../utilies/Calculation';
-import {images, icons} from '../constants/index';
+import {images, icons,fontSizes} from '../constants/index';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import {UIButton} from '../components';
+
 function Welcome(props) {
+  const index = useRef()
+  const [accountTypes, setAccountTypes] = useState([
+    {
+      name: 'Influencer',
+      isSelected: true,
+    },
+    {
+      name: 'Business',
+      isSelected: false,
+    },
+    {
+      name: 'Individual',
+      isSelected: false,
+    },
+  ]);
   return (
     <View style={{backgroundColor: 'white', flex: 100}}>
       <ImageBackground
@@ -39,13 +56,12 @@ function Welcome(props) {
             />
             <Text style={{color: 'white'}}>YOURCOMPANY.CO</Text>
             <View style={{flex: 1}} />
-            <Image
-              source={icons.question}
+            <Icon
+              name={'question-circle'}
               style={{
-                width: 20,
-                height: 20,
+                fontSize: fontSizes.h2,
                 marginRight: 10,
-                tintColor: 'white',
+                color: 'white',
               }}
             />
           </View>
@@ -71,54 +87,51 @@ function Welcome(props) {
             //backgroundColor: 'purple',
             flex: 40,
           }}>
-          <TouchableOpacity
-            style={{
-              borderColor: 'white',
-              borderWidth: 1,
-              borderRadius: 5,
-              height: 45,
-              marginVertical: 20,
-              marginHorizontal: 20,
-              justifyContent: 'center',
-              alignItems: 'center',
-              
-            }}>
-              <Icon name={"check-circle"} style={{color: "#fff",fontSize: 15}}/>
-            <Text style={{color: '#F3705A',fontSize: 15}}>Influencer</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              borderColor: 'white',
-              borderWidth: 1,
-              borderRadius: 5,
-              height: 45,
-              marginVertical: 10,
-              marginHorizontal: 20,
-              justifyContent: 'center',
-              alignItems: 'center',
-              
-            }}>
-            <Text style={{color: '#F3705A',fontSize: 15}}>Business</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              borderColor: 'white',
-              borderWidth: 1,
-              borderRadius: 5,
-              height: 45,
-              marginVertical: 20,
-              marginHorizontal: 20,
-              justifyContent: 'center',
-              alignItems: 'center',
-              
-            }}>
-            <Text style={{color: '#F3705A',fontSize: 15}}>Indivodual</Text>
-          </TouchableOpacity>
+          {accountTypes.map(accountType => (
+            <UIButton key={accountType.name}
+              onPress={() => {
+                let newAccountType = accountTypes.map(eachAccountType => {
+                  return {
+                    ...eachAccountType,
+                    isSelected: eachAccountType.name == accountType.name,
+                  };
+                });
+                setAccountTypes(newAccountType);
+              }}
+              title={accountType.name}
+              isSelected={accountType.isSelected}
+            />
+          ))}
         </View>
         <View
           style={{
             flex: 20,
-          }}></View>
+          }}>
+          <UIButton title={'Login'.toLocaleUpperCase()}></UIButton>
+          <Text
+            style={{
+              marginBottom: 10,
+              color: 'white',
+              fontSize: 14,
+              alignSelf: 'center',
+            }}>
+            Want to register new Account?
+          </Text>
+          <TouchableOpacity onPress={()=>{
+            Alert.alert('Register')
+          }}>
+            <Text
+              style={{
+                marginBottom: 10,
+                color: 'white',
+                fontSize: 14,
+                alignSelf: 'center',
+                textDecorationLine: 'underline',
+              }}>
+              Register
+            </Text>
+          </TouchableOpacity>
+        </View>
       </ImageBackground>
     </View>
   );
