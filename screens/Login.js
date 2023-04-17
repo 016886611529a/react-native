@@ -8,12 +8,19 @@ import {
   TouchableOpacity,
   TextInput,
   KeyboardAvoidingView,
-  Keyboard
+  Keyboard,
+  Platform
 } from 'react-native';
 import {images, icons, colors, fontSizes} from '../constants';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import { isValidPassword,isValidEmail } from '../utilies/Validations';
 function Login(props) {
     const [keyboardIsShow,setkeyboardIsShow] = useState(false);
+
+    const[errorEmail,setErrorEmail] = useState('');
+    const[errorPassword,setErrorPassword] = useState('');
+    const[email,setEmail] = useState('');
+    const[password,setPassword] = useState('');
     useEffect(()=>{
         Keyboard.addListener('keyboardDidShow', ()=>{
             setkeyboardIsShow(true)
@@ -22,15 +29,22 @@ function Login(props) {
             setkeyboardIsShow(false)
         })
     })
+    const isValidOk = () =>
+        email.length > 0 &&
+          password.length > 0 &&
+          isValidEmail(email) == true &&
+          isValidPassword(password) == true;
+    
   return (
         <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? "padding" : "height"}
           style={{
             flex: 100,
             backgroundColor: 'white',
           }}>
           <View
             style={{
-              flex: 35,
+              flex: 30,
               flexDirection: 'row',
               alignItems: 'center',
               justifyContent: 'space-around',
@@ -51,7 +65,7 @@ function Login(props) {
               fe
             />
           </View>
-          <View style={{flex: 25}}>
+          <View style={{flex: 30}}>
             <View
               style={{
                 marginHorizontal: 20,
@@ -64,6 +78,14 @@ function Login(props) {
                 Email:
               </Text>
               <TextInput
+                onChangeText={(text)=>{
+                    if (isValidEmail(text) == false) {
+                      setErrorEmail('Email not in correct format');
+                    } else { 
+                      setErrorEmail('');
+                    }
+                    setEmail(text)
+                }}
                 style={{color: 'black'}}
                 placeholder="example@gmail.com"
                 placeholderTextColor={colors.placeholder}
@@ -75,6 +97,7 @@ function Login(props) {
                   backgroundColor: colors.primary,
                   marginBottom: 10
                 }}></View>
+                <Text style={{color: 'red', marginBottom: 15} }>{errorEmail}</Text>
             </View>
             <View
               style={{
@@ -88,6 +111,14 @@ function Login(props) {
                 PassWord:
               </Text>
               <TextInput
+              onChangeText={(text)=>{
+                if (isValidPassword(text) == false) {
+                    setErrorPassword('Password must be at least 3 character');
+                  } else { 
+                    setErrorPassword('');
+                  }
+                setPassword(text)
+            }}
                 style={{color: 'black'}}
                 secureTextEntry={true}
                 placeholder="Enter your password"
@@ -100,16 +131,18 @@ function Login(props) {
                   backgroundColor: colors.primary,
                   marginBottom: 10
                 }}></View>
+                <Text style={{color: 'red',marginBottom: 15}}>{errorPassword}</Text>
             </View>
           
           </View>
           {keyboardIsShow== false && <View style={{flex: 15}}>
             <TouchableOpacity
+                disabled={isValidOk ()== false}
               onPress={() => {
-                Alert.alert('Press login');
+                Alert.alert(`Email: ${email}, Password: ${password}`);
               }}
               style={{
-                backgroundColor: colors.primary,
+                backgroundColor: isValidOk() == true ? colors.primary : colors.inactive,
                 justifyContent: 'center',
                 alignItems: 'center',
                 width: '50%',
@@ -120,6 +153,7 @@ function Login(props) {
                 style={{
                   padding: 10,
                   fontSize: fontSizes.h5,
+                  color: 'white'
                 }}>
                 Login
               </Text>
@@ -142,7 +176,7 @@ function Login(props) {
               </Text>
             </TouchableOpacity>
           </View>}
-          <View
+          {keyboardIsShow== false && <View
             style={{
               flex: 25,
             }}>
@@ -182,7 +216,7 @@ function Login(props) {
               <View style={{width: 10}}></View>
               <Icon name="google" size={40} color={colors.google} />
             </View>
-          </View>
+          </View>}
     </KeyboardAvoidingView>
   );
 }
