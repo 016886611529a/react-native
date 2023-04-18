@@ -1,5 +1,5 @@
 import axios from "axios"
-
+//adb shell input keyevent 82
 //https://randomuser.me/api
 const getUserDetails = async()=>{
     try{
