@@ -4800,7 +4800,7 @@ log-symbols@^4.1.0:
 
 log@^6.3.1:
   version "6.3.1"
-  resolved "https://registry.npmjs.org/log/-/log-6.3.1.tgz"
+  resolved "https://registry.yarnpkg.com/log/-/log-6.3.1.tgz#fcf9bd71fe2274a51ad608dc95c549dd7512146b"
   integrity sha512-McG47rJEWOkXTDioZzQNydAVvZNeEkSyLJ1VWkFwfW+o1knW+QSi8D1KjPn/TnctV+q99lkvJNe1f0E1IjfY2A==
   dependencies:
     d "^1.0.1"
