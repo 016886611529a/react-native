@@ -19,8 +19,8 @@ function Login(props) {
 
     const[errorEmail,setErrorEmail] = useState('');
     const[errorPassword,setErrorPassword] = useState('');
-    const[email,setEmail] = useState('');
-    const[password,setPassword] = useState('');
+    const[email,setEmail] = useState('long@gmail.com');
+    const[password,setPassword] = useState('123123');
     useEffect(()=>{
         Keyboard.addListener('keyboardDidShow', ()=>{
             setkeyboardIsShow(true)
@@ -34,7 +34,10 @@ function Login(props) {
           password.length > 0 &&
           isValidEmail(email) == true &&
           isValidPassword(password) == true;
-    
+  //navigation
+  const {navigation,route} = props
+  //function of navigate to/back
+  const {navigate,goBack}= navigation  
   return (
         <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? "padding" : "height"}
@@ -87,6 +90,7 @@ function Login(props) {
                     setEmail(text)
                 }}
                 style={{color: 'black'}}
+                value={email}
                 placeholder="example@gmail.com"
                 placeholderTextColor={colors.placeholder}
               />
@@ -120,6 +124,7 @@ function Login(props) {
                 setPassword(text)
             }}
                 style={{color: 'black'}}
+                value={password}
                 secureTextEntry={true}
                 placeholder="Enter your password"
                 placeholderTextColor={colors.placeholder}
@@ -139,7 +144,7 @@ function Login(props) {
             <TouchableOpacity
                 disabled={isValidOk ()== false}
               onPress={() => {
-                Alert.alert(`Email: ${email}, Password: ${password}`);
+                navigate("UITab")
               }}
               style={{
                 backgroundColor: isValidOk() == true ? colors.primary : colors.inactive,

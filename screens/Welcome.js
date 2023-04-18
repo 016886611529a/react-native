@@ -28,6 +28,10 @@ function Welcome(props) {
       isSelected: false,
     },
   ]);
+  //navigation
+  const {navigation,route} = props
+  //function of navigate to/back
+  const {navigate,goBack}= navigation
   return (
     <View style={{backgroundColor: 'white', flex: 100}}>
       <ImageBackground
@@ -107,7 +111,9 @@ function Welcome(props) {
           style={{
             flex: 20,
           }}>
-          <UIButton title={'Login'.toLocaleUpperCase()}></UIButton>
+          <UIButton onPress={()=>{
+            navigate('Login')
+          }} title={'Login'.toLocaleUpperCase()}></UIButton>
           <Text
             style={{
               marginBottom: 10,

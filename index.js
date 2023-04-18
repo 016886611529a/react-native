@@ -3,8 +3,10 @@
  */
 import React from 'react';
 import {AppRegistry} from 'react-native';
-import {Welcome,Login, Register, FoodList} from './screens';
+import {Welcome,Login, Register, FoodList,ProductGridView,Settings } from './screens';
 import {name as appName} from './app.json';
+import UITab from './navigation/UITad';
+import App from './navigation/App'
 
 let fakedProducts = [
     {
@@ -37,6 +39,6 @@ let fakedProducts = [
     //     />);
 
       AppRegistry.registerComponent(appName, () => 
-        () => <Welcome
+        () => <App
         
         />);
