@@ -5,7 +5,7 @@
 // yarn add @react-navigation/native
 // yarn add @react-navigation/native-stack
 import React, {useState, useRef, useEffect} from 'react';
-import {Settings,ProductGridView,FoodList} from '../screens'
+import {Settings,ProductGridView,FoodList,Profile} from '../screens'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {images, icons, colors, fontSizes} from '../constants';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -28,6 +28,9 @@ const screenOptions = ({route}) => ({
     else if(screenName == "Settings"){
         iconName ="wrench"
     }
+    else if(screenName == "Profile"){
+      iconName ="user"
+  }
     return (
       <Icon
         name= {iconName}
@@ -60,6 +63,13 @@ function UITab(props) {
           }}
         />
         <Tab.Screen name={'Settings'} component={Settings} />
+        <Tab.Screen
+          name={'Profile'}
+          component={Profile}
+          options={{
+            tabBarLabel: 'Profile',
+          }}
+        />
       </Tab.Navigator>
     );
 }

@@ -15,6 +15,7 @@ import {images, icons, colors, fontSizes} from '../constants';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
 import { isValidPassword,isValidEmail } from '../utilies/Validations';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+
 function Register(props) {
     const [keyboardIsShow,setkeyboardIsShow] = useState(false);
 
