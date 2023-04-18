@@ -37,6 +37,6 @@ let fakedProducts = [
     //     />);
 
       AppRegistry.registerComponent(appName, () => 
-        () => <FoodList
+        () => <Welcome
         
         />);
