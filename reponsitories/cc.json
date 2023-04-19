@@ -1,0 +1,50 @@
+[
+    {
+        "nationId": "01000US",
+        "nationName": "United States",
+        "population": 326569308,
+        "year": "2020"
+    },
+    {
+        "nationId": "01000US",
+        "nationName": "United States",
+        "population": 324697795,
+        "year": "2019"
+    },
+    {
+        "nationId": "01000US",
+        "nationName": "United States",
+        "population": 322903030,
+        "year": "2018"
+    },
+    {
+        "nationId": "01000US",
+        "nationName": "United States",
+        "population": 321004407,
+        "year": "2017"
+    },
+    {
+        "nationId": "01000US",
+        "nationName": "United States",
+        "population": 318558162,
+        "year": "2016"
+    },
+    {
+        "nationId": "01000US",
+        "nationName": "United States",
+        "population": 316515021,
+        "year": "2015"
+    },
+    {
+        "nationId": "01000US",
+        "nationName": "United States",
+        "population": 314107084,
+        "year": "2014"
+    },
+    {
+        "nationId": "01000US",
+        "nationName": "United States",
+        "population": 311536594,
+        "year": "2013"
+    }
+]

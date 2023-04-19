@@ -1,0 +1,56 @@
+{
+    "cell": "(423)-517-7551",
+    "dob": {
+        "age": 62,
+        "date": "1960-07-30T01:41:41.655Z"
+    },
+    "email": "quinn.wright@example.com",
+    "gender": "male",
+    "id": {
+        "name": "",
+        "value": null
+    },
+    "location": {
+        "city": "Tauranga",
+        "coordinates": {
+            "latitude": "49.3237",
+            "longitude": "-123.3824"
+        },
+        "country": "New Zealand",
+        "postcode": 44689,
+        "state": "Gisborne",
+        "street": {
+            "name": "Clark Avenue",
+            "number": 4256
+        },
+        "timezone": {
+            "description": "Alaska",
+            "offset": "-9:00"
+        }
+    },
+    "login": {
+        "md5": "94ac154f6e515112770fc9c590bd752f",
+        "password": "phialpha",
+        "salt": "842op0Ks",
+        "sha1": "289947d82592e1af3530ca6087bd2e4e4fdbf4d2",
+        "sha256": "45993e300e3b39bd9b86355662b4c1783b019af41997eef98473704b7c2089a5",
+        "username": "happybird958",
+        "uuid": "df262c36-fed3-44f9-8a60-f427aa25d899"
+    },
+    "name": {
+        "first": "Quinn",
+        "last": "Wright",
+        "title": "Mr"
+    },
+    "nat": "NZ",
+    "phone": "(661)-385-5596",
+    "picture": {
+        "large": "https://randomuser.me/api/portraits/men/45.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/45.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/45.jpg"
+    },
+    "registered": {
+        "age": 17,
+        "date": "2005-07-01T05:39:50.995Z"
+    }
+}
