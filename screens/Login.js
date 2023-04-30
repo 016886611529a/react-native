@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import {images, icons, colors, fontSizes} from '../constants';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
+Icon.loadFont();
 import { isValidPassword,isValidEmail } from '../utilies/Validations';
 function Login(props) {
     const [keyboardIsShow,setkeyboardIsShow] = useState(false);

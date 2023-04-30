@@ -1,6 +1,7 @@
 import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {colors, fontSizes} from '../../constants';
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome';
+Icon.loadFont();
 import FiveStars from './FiveStars';
 function GridItem({item,index,onPress}) {
   return (

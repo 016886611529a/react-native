@@ -10,6 +10,7 @@ import {
   KeyboardAvoidingView,
   Keyboard,
   Platform,
+  SafeAreaView,
 } from 'react-native';
 import {
   user as UserRepository,
@@ -70,7 +71,7 @@ function Profile(props) {
     registered,
   } = user;
   return (
-    <View
+    <SafeAreaView
       style={{
         flex: 1,
         marginHorizontal: 10,
@@ -118,7 +119,7 @@ function Profile(props) {
       <View>
         <Text style={{color: "red"}}>{JSON.stringify(populations)}
         </Text>
-        <LineChart
+        {/* <LineChart
           data= {{
             labels: populations.map(item=>item.year),
             datasets: [
@@ -133,9 +134,9 @@ function Profile(props) {
           width={screenWidth}
           height={220}
           chartConfig={chartConfig}
-        />
+        /> */}
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 

@@ -5,6 +5,7 @@ import {
   } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
+Icon.loadFont();
 import { colors } from '../constants';
 function UIButton(props) {
     const {onPress,title, isSelected} = props;

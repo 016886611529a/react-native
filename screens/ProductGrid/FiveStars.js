@@ -2,7 +2,8 @@ import {
     View,
   } from 'react-native';
   import {colors} from '../../constants';
-  import Icon from 'react-native-vector-icons/dist/FontAwesome';
+  import Icon from 'react-native-vector-icons/FontAwesome';
+  Icon.loadFont();
 function FiveStars({numberOfStars}) {
     return <View style={{flexDirection: 'row',justifyContent: 'flex-end'}}>
         {[0,1,2,3,4].map(item=> <Icon key={`${item}`}

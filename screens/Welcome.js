@@ -6,10 +6,12 @@ import {
   Alert,
   ImageBackground,
   TouchableOpacity,
+  Platform
 } from 'react-native';
 import {sum2Number, substract2Number, PI} from '../utilies/Calculation';
 import {images, icons,fontSizes} from '../constants/index';
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome';
+Icon.loadFont();
 import {UIButton} from '../components';
 
 function Welcome(props) {
@@ -47,7 +49,8 @@ function Welcome(props) {
               flexDirection: 'row',
               height: 50,
               justifyContent: 'flex-start',
-              alignItems: 'center',
+              alignItems: 'center', 
+              marginTop: Platform.OS === "ios" ? 40:0
             }}>
             <Image
               source={icons.fire}

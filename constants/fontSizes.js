@@ -1,7 +1,8 @@
+import {isIOS} from "../utilies/Device"
 export default {
-    h1: 22,
-    h2: 20,
-    h3: 18,
-    h5: 14,
-    h6: 12
+    h1: isIOS ? 24: 22,
+    h2: isIOS ? 22: 20,
+    h3: isIOS ? 20: 18,
+    h5: isIOS ? 18: 14,
+    h6: isIOS ? 14: 12
 }

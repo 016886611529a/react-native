@@ -9,10 +9,12 @@ import {
   TextInput,
   KeyboardAvoidingView,
   Keyboard,
-  Platform
+  Platform,
+  UIManager
 } from 'react-native';
 import {images, icons, colors, fontSizes} from '../../constants';
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome';
+Icon.loadFont();
 import { isValidPassword,isValidEmail } from '../../utilies/Validations';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 function _getColorStatus(status){
@@ -26,6 +28,12 @@ function _getColorStatus(status){
         return colors.warning
     }
     return colors.success
+}
+if (
+  Platform.OS === 'android' &&
+  UIManager.setLayoutAnimationEnabledExperimental
+) {
+  UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 function FoodItem(props) {
     let {name, price, socialNetwork, website, status, url} = props.data;

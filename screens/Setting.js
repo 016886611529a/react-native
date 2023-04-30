@@ -13,9 +13,11 @@ import {
   ScrollView,
   FlatList,
   Switch,
+  SafeAreaView,
 } from 'react-native';
 import {images, icons, colors, fontSizes} from '../constants';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icon from 'react-native-vector-icons/FontAwesome';
+Icon.loadFont();
 import { UIHeader } from '../components';
 
 function Settings(props) {
@@ -23,7 +25,7 @@ function Settings(props) {
     const [isUseFingerPrint,setIsUseFingerPrint] = useState(false);
     const [isEnabledChangePassword,setIsEnabledChangePassword] = useState(true);
   return (
-    <View style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1}}>
       <UIHeader title={'Setting'} />
       <ScrollView>
         <View
@@ -290,7 +292,7 @@ function Settings(props) {
           />
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 }
 

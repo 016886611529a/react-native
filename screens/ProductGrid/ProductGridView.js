@@ -1,6 +1,7 @@
 import {
     View,
     FlatList,
+    SafeAreaView,
   } from 'react-native';
 import { useState } from 'react';
 import GridItem from './GridItem';
@@ -121,7 +122,7 @@ import GridItem from './GridItem';
         },
     ])
     return (
-      <View style={{flex: 1}}>
+      <SafeAreaView style={{flex: 1}}>
         <FlatList
           style={{marginTop: 5}}
           data={products}
@@ -145,7 +146,7 @@ import GridItem from './GridItem';
             }}/>
           )}
         />
-      </View>
+      </SafeAreaView>
     );
   }
   
